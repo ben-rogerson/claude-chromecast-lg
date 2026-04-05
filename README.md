@@ -24,9 +24,7 @@ The three tools are:
 | `mute`                      | Mute the TV                                                       |
 | `volume up` / `volume down` | Adjust volume                                                     |
 
-### App launching
-
-Say any app name to launch it: `netflix`, `disney+`, `prime`, `plex`, `stan`, `binge`, `kayo`, `tubi`, `spotify`, `steam`.
+App launching: Say any app name to launch it: `netflix`, `disney+`, `prime`, `plex`, `stan`, `binge`, `kayo`, `tubi`, `spotify`, `steam`.
 
 ### Other controls
 
@@ -49,7 +47,13 @@ The skill orchestrates three CLI tools behind the scenes:
 | `adb`           | Google TV app launching and search  |
 | `go-chromecast` | Chromecast media playback           |
 
-## Prerequisites
+## Getting started
+
+### Claude Code skill
+
+```bash
+claude code add-skill <path-to-skill>/SKILL.md
+```
 
 ### lgtv (LG TV control)
 
