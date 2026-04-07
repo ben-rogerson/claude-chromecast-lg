@@ -21,13 +21,18 @@ Run all commands via the Bash tool. Report results concisely.
 
 **"yt <query>" shorthand** - When the user says "yt <something>", search YouTube on the TV for that query via ADB. If the user says just "yt" with no query, launch the YouTube app instead of searching.
 
-**"music" shorthand** - When the user says just "music" with no specifics, pick one search query at random from the pool matching the current time of day, then search YouTube for it. Set the volume to 3 via `lgtv volume set 3`. After the search loads, select a random result by sending `KEYCODE_DPAD_RIGHT` between 0 and 15 times then `KEYCODE_DPAD_CENTER` via ADB (with a short sleep to let results load).
+**"music" shorthand** - When the user says just "music" with no specifics, use `shuf -n 1` via Bash to randomly select one query from the pool matching the current time of day, then search YouTube for it. Set the volume to 3 via `lgtv volume set 3`. After the search loads, select a random result by sending `KEYCODE_DPAD_RIGHT` between 0 and 15 times (use `shuf` to pick the count) then `KEYCODE_DPAD_CENTER` via ADB (with a short sleep to let results load).
+
+Example of how to pick the query:
+
+```bash
+echo -e "evening synthwave playlist\njazz hop evening playlist\nneo soul evening playlist" | shuf -n 1
+```
 
 Playlist pools by time of day (pick one at random):
 
 Morning (before noon):
 
-- morning coffee jazz playlist
 - indie folk morning playlist
 - chill acoustic morning playlist
 - lo-fi morning beats playlist
