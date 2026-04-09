@@ -21,7 +21,7 @@ Run all commands via the Bash tool. Report results concisely.
 
 **"yt <query>" shorthand** - When the user says "yt <something>", search YouTube on the TV for that query via ADB. If the user says just "yt" with no query, launch the YouTube app instead of searching.
 
-**"music" shorthand** - When the user says just "music" with no specifics, use `shuf -n 1` via Bash to randomly select one query from the pool matching the current time of day, then search YouTube for it. Set the volume to 3 via `lgtv volume set 3`. After the search loads, select a random result by sending `KEYCODE_DPAD_RIGHT` between 0 and 15 times (use `shuf` to pick the count) then `KEYCODE_DPAD_CENTER` via ADB (with a short sleep to let results load).
+**"music" shorthand** - When the user says just "music" with no specifics, use `shuf -n 1` via Bash to randomly select one query from the pool matching the current time of day, then search YouTube for it. Set the volume to 3 via `lgtv volume set 3`. After the search loads, press `KEYCODE_ENTER` first, then select a random result by sending `KEYCODE_DPAD_RIGHT` between 0 and 15 times (use `shuf` to pick the count) then `KEYCODE_DPAD_CENTER` via ADB (with a short sleep to let results load).
 
 Example of how to pick the query:
 
@@ -33,53 +33,51 @@ Playlist pools by time of day (pick one at random):
 
 Morning (before noon):
 
-- indie folk morning playlist
-- chill acoustic morning playlist
-- lo-fi morning beats playlist
-- bossa nova breakfast playlist
-- sunday morning soul playlist
-- classic rock morning playlist
-- 90s trip hop morning playlist
-- chill synthwave morning playlist
+- synthwave morning drive playlist
+- drum and bass morning energy playlist
+- progressive rock morning playlist
+- grunge morning playlist
+- liquid drum and bass morning playlist
+- electro house morning playlist
+- alternative rock morning playlist
+- chillstep morning playlist
 
 Afternoon (noon-5pm):
 
-- afternoon chill 90s R&B playlist
-- indie pop afternoon playlist
-- funk soul afternoon playlist
-- chillhop afternoon playlist
-- dream pop afternoon playlist
-- alternative rock afternoon playlist
-- classic rock driving playlist
-- prog rock afternoon playlist
-- 90s breakbeat playlist
+- progressive house afternoon playlist
+- trance driving playlist
+- drum and bass workout playlist
+- EDM afternoon playlist
+- electro house afternoon playlist
+- progressive trance afternoon playlist
+- djent afternoon playlist
 - synthwave driving playlist
-- mallsoft afternoon playlist
+- future bass afternoon playlist
+- stutter house playlist
 
 Evening (5pm-10pm):
 
-- evening synthwave playlist
-- indie electronic evening playlist
-- jazz hop evening playlist
-- neo soul evening playlist
-- post-rock evening playlist
-- ambient guitar evening playlist
-- classic acid house playlist
-- krautrock evening playlist
+- synthwave evening playlist
+- progressive trance evening playlist
+- progressive house evening playlist
+- liquid funk evening playlist
+- chillstep evening playlist
+- progressive rock evening playlist
+- dubstep evening playlist
+- drum and bass evening playlist
 
 Late night (after 10pm):
 
-- late night ambient playlist
-- midnight lo-fi playlist
-- downtempo electronic late night playlist
-- dark jazz late night playlist
-- shoegaze late night playlist
-- minimal techno late night playlist
-- classic house late night playlist
-- post-punk late night playlist
-- progressive rock deep cuts playlist
-- darksynth late night playlist
-- mallsoft late night playlist
+- late night progressive trance playlist
+- darkwave late night playlist
+- djent late night playlist
+- progressive metal deep cuts playlist
+- dubstep late night playlist
+- chillstep late night playlist
+- drumstep late night playlist
+- downtempo late night playlist
+- progressive house late night playlist
+- dark synthwave late night playlist
 
 ## Commands
 
