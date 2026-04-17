@@ -1,4 +1,6 @@
-*
-!.gitignore
-!README.md
-!SKILL.md
+# Ben's local files/folders
+build/
+pyproject.json
+lgtvremote_cli.egg-info/
+lgtvremote_cli.py
+pyproject.toml

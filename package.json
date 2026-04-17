@@ -1,0 +1,7 @@
+{
+  "name": "chromecast-skill",
+  "scripts": {
+    "install": "ln -sf \"$(pwd)/chromecast\" \"$HOME/.claude/skills/chromecast\"",
+    "uninstall": "rm -f \"$HOME/.claude/skills/chromecast\""
+  }
+}

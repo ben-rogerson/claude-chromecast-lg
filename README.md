@@ -52,7 +52,8 @@ The skill orchestrates three CLI tools behind the scenes:
 ### Claude Code skill
 
 ```bash
-claude code add-skill <path-to-skill>/SKILL.md
+npm run install    # symlinks the skill into ~/.claude/skills/chromecast
+npm run uninstall  # removes the symlink
 ```
 
 ### lgtv (LG TV control)
