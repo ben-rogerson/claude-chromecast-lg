@@ -12,19 +12,22 @@ The three tools are:
 
 ### Quick commands
 
-| Say this                    | What happens                                                      |
-| --------------------------- | ----------------------------------------------------------------- |
-| `music`                     | Searches YouTube for a time-appropriate playlist, sets low volume |
-| `tv off` / `tv on`          | Power the TV off or on                                            |
-| `yt`                        | Launch YouTube                                                    |
-| `yt lofi hip hop`           | Search YouTube for "lofi hip hop"                                 |
-| `stremio`                   | Launch Stremio                                                    |
-| `stremio severance`         | Search Stremio for "severance"                                    |
-| `pause` / `resume`          | Pause or resume playback                                          |
-| `mute`                      | Mute the TV                                                       |
-| `volume up` / `volume down` | Adjust volume                                                     |
+All commands require the `tv` prefix.
 
-App launching: Say any app name to launch it: `netflix`, `disney+`, `prime`, `plex`, `stan`, `binge`, `kayo`, `tubi`, `spotify`, `steam`.
+| Say this                       | What happens                                                      |
+| ------------------------------ | ----------------------------------------------------------------- |
+| `tv music`                     | Searches YouTube for a time-appropriate playlist, sets low volume |
+| `tv off` / `tv on`             | Power the TV off or on                                            |
+| `tv yt`                        | Launch YouTube                                                    |
+| `tv yt lofi hip hop`           | Search YouTube for "lofi hip hop"                                 |
+| `tv stremio`                   | Launch Stremio                                                    |
+| `tv stremio severance`         | Search Stremio for "severance"                                    |
+| `tv pause` / `tv resume`       | Pause or resume playback                                          |
+| `tv next` / `tv previous`      | Skip to next or previous in playlist                              |
+| `tv mute`                      | Mute the TV                                                       |
+| `tv volume up` / `tv volume down` | Adjust volume                                                  |
+
+App launching: Say `tv <app name>` to launch it: `tv netflix`, `tv disney+`, `tv prime`, `tv plex`, `tv stan`, `tv binge`, `tv kayo`, `tv tubi`, `tv spotify`, `tv steam`.
 
 ### Other controls
 

@@ -14,6 +14,11 @@ The skill loader provides the base directory above. Set this before running any 
 SCRIPTS="<base directory>/scripts"
 ```
 
+**go-chromecast: always pass `--addr` flag** - without it, go-chromecast prompts interactively and loops with EOF errors in a non-TTY shell. Always source config.sh and use `$CHROMECAST_ADDR`:
+```bash
+source $SCRIPTS/config.sh && go-chromecast $CHROMECAST_ADDR <command>
+```
+
 **Volume/mute: always use `lgtv`** - go-chromecast and ADB volume/mute commands silently fail.
 
 **App launching: always use `launch-app.sh`** - wraps ADB monkey with focus confirmation.
@@ -21,6 +26,8 @@ SCRIPTS="<base directory>/scripts"
 ---
 
 ## Shorthand triggers
+
+All triggers require the `tv` prefix (e.g. "tv next", "tv pause", "tv yt query").
 
 ### "tv on"
 ```bash
@@ -32,16 +39,16 @@ $SCRIPTS/wake-if-needed.sh
 lgtv off
 ```
 
-### "yt \<query\>"
+### "tv yt \<query\>"
 ```bash
 $SCRIPTS/yt-search.sh "<query>"
 ```
-If the user says just "yt" with no query, launch the YouTube app instead:
+If the user says just "tv yt" with no query, launch the YouTube app instead:
 ```bash
 $SCRIPTS/launch-app.sh com.google.android.youtube.tv
 ```
 
-### "stremio \<query\>"
+### "tv stremio \<query\>"
 ```bash
 $SCRIPTS/stremio-search.sh "<query>"
 ```
@@ -50,18 +57,18 @@ If no query, just launch Stremio:
 $SCRIPTS/launch-app.sh com.stremio.one
 ```
 
-### "music"
+### "tv music"
 First run `wake-if-needed.sh` if the TV may be off, then:
 ```bash
 $SCRIPTS/music.sh
 ```
 
-### App launch (any app by name)
+### "tv \<app name\>" (app launch)
 ```bash
 $SCRIPTS/launch-app.sh <package>
 ```
 
-### Check power status
+### "tv status" / check power status
 ```bash
 $SCRIPTS/check-power.sh
 ```
@@ -112,6 +119,11 @@ To find a package: `source $SCRIPTS/config.sh && $ADB shell pm list packages | g
 
 ## go-chromecast commands
 
+Always invoke as:
+```bash
+source $SCRIPTS/config.sh && go-chromecast $CHROMECAST_ADDR <command>
+```
+
 ### Status
 | Command | Description |
 |---|---|
@@ -120,7 +132,7 @@ To find a package: `source $SCRIPTS/config.sh && $ADB shell pm list packages | g
 
 Always check `status` first when the user asks what's playing.
 
-### Playback
+### Playback (trigger: "tv \<command\>")
 | Command | Description |
 |---|---|
 | `play` / `unpause` | Resume |
